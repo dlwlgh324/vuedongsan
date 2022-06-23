@@ -11,11 +11,11 @@
     <div class="menu">
         <a href="#" v-for="a in meuns" :key="a">{{a}}</a>
     </div>
-    <div v-for="(a,i) in 원룸들" :key="i">
-        <img :src="원룸들[i].image" alt="" class="room-img">
-        <h4 @click="modalOpen = true">{{원룸들[i].title}}</h4>
-        <p>{{원룸들[i].price}}원</p>
-        <p>{{원룸들[i].content}}</p>
+    <div v-for="(a,i) in oneroom" :key="i">
+        <img :src="oneroom[i].image" alt="" class="room-img">
+        <h4 @click="modalOpen = true">{{oneroom[i].title}}</h4>
+        <p>{{oneroom[i].price}}원</p>
+        <p>{{oneroom[i].content}}</p>
     </div>
 </template>
 
@@ -27,16 +27,16 @@ export default {
     name: 'App',
     data() {
         return {
-            원룸들: data,
+            oneroom: data,
             modalOpen: false, //0, 1로 표현해도 됨 // 리액트는 state임
-            신고수: [0, 0, 0],
+            police: [0, 0, 0],
             meuns: ['Home', 'Shop', 'About'],
             products: ['역삼동원룸', '천호동원룸', '마포구원룸']
         }
     },
     methods: {
         increas() {
-            this.신고수 += 1
+            this.police += 1
         }
     },
     components: {}
