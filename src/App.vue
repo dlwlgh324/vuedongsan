@@ -1,15 +1,16 @@
 <template>
-
-    <TheModal :oneroom="oneroom" :clickData="clickData" :modalOpen="modalOpen" />
+    <TheModal :oneroom="oneroom" :clickData="clickData" :modalOpen="modalOpen" @closethemodal= "modalOpen = false"/>
+    
     
     <div class="menu">
         <a href="#" v-for="a in meuns" :key="a">{{a}}</a>
     </div>
     
-    <TheDiscount/>
+    <TheDiscount />
+    <!-- v-bind = "object" :이름 = "object.name" :나이="object.age" -->
     
-    <TheCard v-for="a in card" :key="a" :oneroom="oneroom"/>
-
+    <TheCard @openthemodal="modalOpen = true; clickData = $event" v-for="(a,i) in oneroom" :key="i" :oneroom="oneroom[i]"/>
+    <!-- clickData = i 라고 해도 됨 -->
 </template>
 
 <script>
@@ -22,11 +23,12 @@ export default {
     name: 'App',
     data() {
         return {
+            object: { name: 'kim', age: 20 },
             clickData: 0,
             oneroom: data,
             modalOpen: false, //0, 1로 표현해도 됨 // 리액트는 state임
             meuns: ['Home', 'Shop', 'About'],
-            card : TheCard,
+            card: TheCard,
         }
     },
     methods: {
