@@ -53,10 +53,13 @@ export default {
 }
 
 .white-bg {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
     width: 50%;
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
-    margin: 0 auto;
 }
 </style>

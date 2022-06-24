@@ -1,6 +1,5 @@
 <template>
-    <TheModal :oneroom="oneroom" :clickData="clickData" :modalOpen="modalOpen" @closethemodal= "modalOpen = false"/>
-    
+    <TheModal :oneroom="oneroom" :clickData="clickData" :modalOpen="modalOpen" @closethemodal="modalOpen = false" />
     
     <div class="menu">
         <a href="#" v-for="a in meuns" :key="a">{{a}}</a>
@@ -9,7 +8,7 @@
     <TheDiscount />
     <!-- v-bind = "object" :이름 = "object.name" :나이="object.age" -->
     
-    <TheCard @openthemodal="modalOpen = true; clickData = $event" v-for="(a,i) in oneroom" :key="i" :oneroom="oneroom[i]"/>
+    <TheCard @openthemodal="modalOpen = true; clickData = $event" v-for="(a,i) in oneroom" :key="i" :oneroom="oneroom[i]" />
     <!-- clickData = i 라고 해도 됨 -->
 </template>
 
@@ -45,6 +44,7 @@ export default {
 </script>
 
 <style>
+
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
